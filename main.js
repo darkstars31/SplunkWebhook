@@ -29,5 +29,17 @@ app.post("/v1/webhook", (req, res, next) => {
 	res.send("true");
 });
 
+app.post("/v1/deployhook", (req, res, next) => {
+	console.log(req.body);
+	logger.error(req.body);
+	var registeredProjects = {
+		SplunkWebhook: {
+			location: "C:\dev\SplunkWebhook"
+		}
+	};
+
+	
+});
+
 
 app.listen(config.express.port);
